@@ -26,7 +26,7 @@ class FilesManager(
         private const val TAG = "FileManager"
     }
 
-    var path = ""
+    var path = "/"
     fun listDir() {
         val code = CommandsManager.iListDir(path)
         boardManager.writeInSilentMode(code, onResponse = { result ->

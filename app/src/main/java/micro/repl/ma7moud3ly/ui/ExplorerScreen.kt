@@ -169,7 +169,7 @@ private fun Header(
                 color = MaterialTheme.colorScheme.primary,
             )
             Text(
-                text = "/${path()}", maxLines = 1,
+                text = "${path()}", maxLines = 1,
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.primary,
                 overflow = TextOverflow.Ellipsis,

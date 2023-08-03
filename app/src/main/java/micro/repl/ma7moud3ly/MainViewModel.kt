@@ -26,7 +26,7 @@ class MainViewModel : ViewModel() {
     val microDevice: MicroDevice? get() = (status.value as? ConnectionStatus.Connected)?.usbDevice?.toMicroDevice()
 
     // the current path in files explorer
-    val root = mutableStateOf("")
+    val root = mutableStateOf("/")
 
     // files list in files explorer
     val files = MutableStateFlow<List<MicroFile>>(listOf())
