@@ -85,11 +85,18 @@ class FilesManager(
             return
         }
         for (i in 0 until items.length()) {
-            val item = items[i] as? JSONArray
-            if (item?.length() == 4) {
+            val item = items[i] as? JSONArray ?: continue
+            val length = item.length()
+
+            if (length >= 3) {
                 val name = (item[0] as? String) ?: ""
                 val type = (item[1] as? Int) ?: 0x8000
-                val size = (item[3] as? Int) ?: 0
+
+                val size = if (length == 4) {
+                    (item[3] as? Int) ?: 0
+                } else {
+                    0
+                }
                 list.add(MicroFile(name = name, path = this.path, type = type, size = size))
             }
         }
